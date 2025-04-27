@@ -1,0 +1,5 @@
+Link do repozytorium GitHub:
+https://github.com/NadiiaMartyniuk/weather-app
+
+Link do obrazu na DockerHub:
+https://hub.docker.com/r/nadiiamartyniuk/nadiia
