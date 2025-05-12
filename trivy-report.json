@@ -1,0 +1,127 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-04-29T15:36:35.371247144Z",
+  "ArtifactName": "docker.io/nadiiamartyniuk/nadiia:latest",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.21.3"
+    },
+    "ImageID": "sha256:23435ee0d3a034015dbde8d80e3c99542c2272ae127920de521991622b493478",
+    "DiffIDs": [
+      "sha256:08000c18d16dadf9553d747a58cf44023423a9ab010aab96cf263d2216b8b350",
+      "sha256:8f44d3fbe908edaeff9d406793cce8ae754603c5b7c265d9eff221f48a409ba4",
+      "sha256:f551c5c9c892e389219fa8ec3be028b0be66f196230b64871483ba9a00837ba6",
+      "sha256:d0b5ec0a7435bf1dd4afb5e2a2991c1a3ec2ef9c9e8f614a5c8f242f989a9091"
+    ],
+    "RepoTags": [
+      "nadiiamartyniuk/nadiia:latest"
+    ],
+    "RepoDigests": [
+      "nadiiamartyniuk/nadiia@sha256:c114a2c4168b6df85cf88213f0a539879787f6b093a46d8ad64722db8b5a9f1c"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2025-04-29T15:17:46.022191851Z",
+      "history": [
+        {
+          "created": "2025-02-14T03:28:36Z",
+          "created_by": "ADD alpine-minirootfs-3.21.3-x86_64.tar.gz / # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-14T03:28:36Z",
+          "created_by": "CMD [\"/bin/sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-29T15:16:25.082480067Z",
+          "created_by": "WORKDIR /app",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-29T15:16:30.088126954Z",
+          "created_by": "RUN /bin/sh -c apk --no-cache add ca-certificates curl # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-29T15:17:46.022191851Z",
+          "created_by": "COPY /app/weatherapp . # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-04-29T15:17:46.022191851Z",
+          "created_by": "LABEL maintainer=NadiiaMartyniuk",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-29T15:17:46.022191851Z",
+          "created_by": "EXPOSE map[8080/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-29T15:17:46.022191851Z",
+          "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"curl -f http://localhost:8080/health || exit 1\"] \"30s\" \"3s\" \"0s\" \"0s\" '\\x00'}",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-04-29T15:17:46.022191851Z",
+          "created_by": "CMD [\"./weatherapp\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:08000c18d16dadf9553d747a58cf44023423a9ab010aab96cf263d2216b8b350",
+          "sha256:8f44d3fbe908edaeff9d406793cce8ae754603c5b7c265d9eff221f48a409ba4",
+          "sha256:f551c5c9c892e389219fa8ec3be028b0be66f196230b64871483ba9a00837ba6",
+          "sha256:d0b5ec0a7435bf1dd4afb5e2a2991c1a3ec2ef9c9e8f614a5c8f242f989a9091"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "./weatherapp"
+        ],
+        "Healthcheck": {
+          "Test": [
+            "CMD-SHELL",
+            "curl -f http://localhost:8080/health || exit 1"
+          ],
+          "Interval": 30000000000,
+          "Timeout": 3000000000
+        },
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Labels": {
+          "maintainer": "NadiiaMartyniuk"
+        },
+        "WorkingDir": "/app",
+        "ExposedPorts": {
+          "8080/tcp": {}
+        },
+        "ArgsEscaped": true
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "docker.io/nadiiamartyniuk/nadiia:latest (alpine 3.21.3)",
+      "Class": "os-pkgs",
+      "Type": "alpine"
+    },
+    {
+      "Target": "app/weatherapp",
+      "Class": "lang-pkgs",
+      "Type": "gobinary"
+    }
+  ]
+}
